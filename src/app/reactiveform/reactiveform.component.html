@@ -1,0 +1,384 @@
+<app-first></app-first>
+<!--The content below is only a placeholder and can be replaced.-->
+<br>
+<br>
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <br>
+  <br>
+  <div class="outerborder">
+    <!-- <form [formGroup]=" registrationForm" novalidate> -->
+    <form name="form" [formGroup]=" registrationForm" autocomplete="on" (ngSubmit)="registrationForm.valid  "
+      novalidate>
+      <table align=center>
+        <tr>
+          <td>Full Name :</td>
+          <td>Last Name :</td>
+
+
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" formControlName="name"></td>
+          <td><input type="text" class="form-control" formControlName="lastName"></td>
+
+
+        </tr>
+        <tr>
+          <td class=a>
+            <div *ngIf="registrationForm.controls['name'].invalid
+               && (registrationForm.controls['name'].dirty || registrationForm.controls['name'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="registrationForm.controls['name'].errors.required" class="error">
+                Name is required.
+              </div>
+              <div *ngIf="registrationForm.controls['name'].errors.minlength" class="error">
+                Name must be at least 4 characters long.
+              </div>
+            </div>
+
+          </td>
+          <td class=a>
+            <div *ngIf="registrationForm.controls['lastName'].invalid
+               && (registrationForm.controls['lastName'].dirty || registrationForm.controls['lastName'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="registrationForm.controls['lastName'].errors.required" class="error">
+                Name is required.
+              </div>
+              <div *ngIf="registrationForm.controls['lastName'].errors.minlength" class="error">
+                Name must be at least 4 characters long.
+              </div>
+            </div>
+
+          </td>
+
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>Date of Birth :</td>
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" formControlName="email"> </td>
+          <td>
+            <my-date-picker name="dob" [options]="myDatePickerOptions" formControlName="dob"></my-date-picker>
+          </td>
+        </tr>
+        <tr>
+          <td class="a">
+            <div *ngIf="registrationForm.controls['email'].invalid
+              && (registrationForm.controls['email'].dirty || registrationForm.controls['email'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="registrationForm.controls['email'].errors.required" class="error">
+                Email is required.
+              </div>
+              <div *ngIf="registrationForm.controls['email'].errors.pattern" class="error">
+                pattern is required.
+              </div>
+            </div>
+
+          </td>
+        </tr>
+        <tr>
+          <td>Gender :</td>
+          <td> <input type="radio" name="gender" value="male" formControlName="gender"> Male
+            <input type="radio" name="gender" value="Female" formControlName="gender"> Female</td>
+        </tr>
+
+        <tr>
+          <td class="a">
+            <div *ngIf="registrationForm.controls['gender'].invalid
+                && (registrationForm.controls['gender'].dirty || registrationForm.controls['gender'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="registrationForm.controls['gender'].errors.required" class="error">
+                Gender is required.
+              </div>
+
+            </div>
+
+          </td>
+        </tr>
+        <tr>
+          <td>Mobile :</td>
+          <td>land Line :</td>
+
+
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" formControlName="mobile"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57 "> </td>
+          <td><input type="text" class="form-control" formControlName="land"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57 "> </td>
+
+        </tr>
+        <tr>
+
+          <td class=a>
+            <div *ngIf="registrationForm.controls['mobile'].invalid
+                  && (registrationForm.controls['mobile'].dirty || registrationForm.controls['mobile'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="registrationForm.controls['mobile'].errors.required" class="error">
+                mobile number is required.
+              </div>
+              <div *ngIf="registrationForm.controls['mobile'].errors.maxlength" class="error">
+                10 characters is required.
+              </div>
+              <div *ngIf="registrationForm.controls['mobile'].errors.minlength" class="error">
+                  10 characters is required.
+                </div>
+  
+
+            </div>
+
+          </td>
+
+          <td class=a>
+            <div *ngIf="registrationForm.controls['land'].invalid
+                  && (registrationForm.controls['land'].dirty || registrationForm.controls['land'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="registrationForm.controls['land'].errors.required" class="error">
+                number is required.
+              </div>
+              <div *ngIf="registrationForm.controls['land'].errors.maxlength" class="error">
+                10 characters is required.
+              </div>
+              <div *ngIf="registrationForm.controls['land'].errors.minlength" class="error">
+                  10 characters is required.
+                </div>
+
+            </div>
+
+          </td>
+
+
+        </tr>
+
+
+        <tr>
+          <td>college studying </td>
+          <td><select id="select" value="-1" name="select" class="form-control" formControlName="college">
+              <option disabled selectedvalue="-1">--select college--</option>
+              <option>Raghu engineering college</option>
+              <option>Anil neerukonda institute</option>
+              <option>Srinivasa engineering college</option>
+              <option>MVGR</option>
+            </select> </td>
+
+        </tr>
+        <tr>
+          <td></td>
+          <td class=a>
+            <div *ngIf="registrationForm.controls['college'].invalid
+              && (registrationForm.controls['college'].dirty || registrationForm.controls['college'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="registrationForm.controls['college'].errors.required" class="error">
+                required.
+              </div>
+
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Address :</td>
+          <td> <textarea name="message" rows="10" cols="30" class="form-control"
+              formControlName="address">Address :</textarea></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class=a>
+            <div *ngIf="registrationForm.controls['address'].invalid
+                && (registrationForm.controls['address'].dirty || registrationForm.controls['address'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="registrationForm.controls['address'].errors.required" class="error">
+                required.
+              </div>
+
+            </div>
+
+          </td>
+        </tr>
+        <tr>
+          <td> State :</td>
+          <td> <select id="select" value="-1" name="select" class="form-control" formControlName="state">
+
+              <option>Andhra Pradesh</option>
+              <option>Telengana</option>
+              <option>chennai</option>
+              <option>kerala</option>
+            </select>
+
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class=a>
+            <div *ngIf="registrationForm.controls['state'].invalid
+                && (registrationForm.controls['state'].dirty || registrationForm.controls['state'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="registrationForm.controls['state'].errors.required" class="error">
+                required.
+              </div>
+
+            </div>
+
+          </td>
+        </tr>
+        <tr>
+          <td>City:</td>
+          <td>
+            <ng-multiselect-dropdown name="city" [placeholder]="'select city'" [data]="cities" formControlName="city"
+              [disabled]="disabled" [settings]="dropdownSettings" (onSelect)="onitemselect($event)">
+            </ng-multiselect-dropdown>
+          </td>
+
+
+        </tr>
+
+        <tr>
+          <td></td>
+          <td class=a>
+            <div *ngIf="registrationForm.controls['city'].invalid
+            && (registrationForm.controls['city'].dirty || registrationForm.controls['city'].touched)"
+              class="alert alert-danger">
+              <div *ngIf="registrationForm.controls['city'].errors.required" class="error">
+                required.
+              </div>
+
+            </div>
+
+          </td>
+        </tr>
+
+
+
+
+
+
+
+
+      </table>
+      <!-- <input type="checkbox" name="check" value="check"  class="form-control" formControlName="check">agree the terms and conditions <br>  <br>
+  
+      <div *ngIf="registrationForm.controls['check'].invalid
+      && (registrationForm.controls['state'].dirty || registrationForm.controls['state'].touched)"
+       class="alert alert-danger">
+         <div *ngIf="registrationForm.controls['check'].errors.required" class="error">
+       required.
+       </div>
+       </div> -->
+
+
+      <!-- <button data-toggle="modal" id="center" href="#myModal" class="btn btn-primary btn-dark"
+        (click)="onSubmit(registrationForm.value)"
+        [disabled]="registrationForm.pristine ||registrationForm.invalid">Submit</button> -->
+        <button id="center" (click)="onSubmit(registrationForm.value)"
+        [disabled]="registrationForm.pristine ||registrationForm.invalid"> Submit</button>
+
+
+    </form>
+  </div>
+
+
+</div>
+<br>
+<br>
+<div style="text-align: center">
+    <button type="button" (click)="viewdetails()">ViewDetails</button>
+
+</div>
+
+
+
+<!-- <table class="table table-striped" id="mytable">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email </th>
+      <th scope="col">Date of Birth </th>
+      <th scope="col">Gender</th>
+      <th scope="col">Mobile Number </th>
+
+      <th scope="col">College </th>
+
+    </tr>
+  </thead>
+ 
+
+  <tbody>
+    <tr *ngFor="let i of arr;let j=index;">
+      <td>{{i.id}}</td>
+
+      <td>{{i.name }}</td>
+      <td>{{i.lastName }}</td>
+      <td>{{i.email }}</td>
+      <td>{{i.dob}}</td>
+      <td>{{i.gender }}</td>
+      <td>{{i.mobile }}</td>
+
+
+      <td>{{i.college }}</td>
+
+
+
+
+      <button type="button" (click)="view(i)">VIEW</button>
+
+    </tr>
+    <tr>
+      <div>
+        <ngx-spinner></ngx-spinner>
+      </div>
+    </tr>
+  </tbody>
+</table> -->
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Your details</h4>
+      </div>
+      <div class="modal-body">
+        <table>
+          <thead>
+          </thead>
+          <tbody class="table" border="2">
+            <tr *ngFor="let i of arr">
+              <td>First Name:{{i.name }}
+              Last Name:{{i.lastName }}
+             Email :{{i.email }}
+              Date of birth :{{i.dob}} 
+              Gender :{{i.gender }}
+               Mobile :{{i.mobile }} 
+              landLine :{{i.land }} 
+               College :{{i.college }} 
+               Address : {{i.address }}
+
+              State : {{i.state}}
+            City :{{i.city }}</td>
+
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+
+
+
+
+
+
+<!-- <router-outlet></router-outlet> -->

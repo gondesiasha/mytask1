@@ -1,0 +1,73 @@
+<app-first></app-first>
+
+
+
+
+
+
+
+<!-- <input [(ngModel)]="message" />
+<button (click)="sendMessage()">Send</button> -->
+
+
+
+
+
+
+
+
+<div class="a">
+
+
+    <div class="card" style="width: 30rem; height: auto;">
+      <!-- <img class="card-img-top" src="./assets/images/logo.png" alt="Card image cap"> -->
+      <div class="card-body">
+        <h1>Start Chatting</h1>
+        
+        <label for="username">Username</label>
+        <input type="text" [(ngModel)]="user" class="form-control" id="username" placeholder="Enter username">
+       
+       
+          <label for="roomInput">Choose room</label>
+    
+          <select name="roomInput" id="roomInput" class="form-control" [(ngModel)]="room">
+              <option value="Lobby">Lobby</option>
+              <option value="Hall">Hall</option>
+              <option value="Deluxe">Deluxe</option>
+          </select>
+    
+          <div class="col sm-2">
+            <div style="margin-top:19px;" class="pull-right"> 
+                <button type="button" class="btn btn-primary" (click)="join()">Join</button>
+                <button type="button" class="btn btn-dark" (click)="leave()">Leave</button>
+            </div>
+        </div>
+    
+        <div class=b>
+          <div class="well" style="height:200px; padding:15px;">
+              <div *ngFor="let item of messageArray">
+              <span><strong>{{item.user}} : </strong> {{item.message}}</span>
+              </div>
+          </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-sm-10">
+            <input type="text" class="form-control" [(ngModel)]="messageText">            
+        </div>
+        <div class="col-sm-2">
+                <button type="button" class="btn btn-success pull-right" (click)="sendMessage()">Send</button>
+        </div>
+    </div>
+     
+    
+    
+    
+      
+       
+      </div>
+    </div>
+    </div>
+    
+    
+    

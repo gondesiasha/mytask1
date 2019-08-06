@@ -1,0 +1,119 @@
+<app-first></app-first>
+<p>calender works!</p>
+<!-- <div *ngIf="options">
+        <ng-fullcalendar #fullcalendar [options]="options" (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
+            (eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)"></ng-fullcalendar>
+    </div -->
+
+<div class='app'>
+        <div style="text-align: center">
+
+
+
+                <button data-toggle="modal" id="center" href="#myModal" class="btn btn-primary btn-dark">Add Event
+                </button>
+
+
+        </div>
+
+        <div class='app-calendar' *ngIf="calendarVisible">
+                <full-calendar #calendar defaultView="dayGridMonth" [header]="{
+              left: 'prev,next today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+            }" [plugins]="calendarPlugins" [weekends]="calendarWeekends" [events]="calendarEvents"></full-calendar>
+        </div>
+
+        <div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">
+                        <div>
+                                <form name="form" autocomplete="off" (ngSubmit)="f.form.valid && onSubmit(f)"
+                                        #f="ngForm" novalidate>
+                                        <div class="modal-content">
+                                                <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal"
+                                                                aria-hidden="true">&times;</button>
+                                                        <h4 class="modal-title">Your details</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                        <table>
+                                                                <thead>
+                                                                </thead>
+                                                                <tbody class="table">
+                                                                        <tr>
+                                                                                <td> Event Name : <input type="text"
+                                                                                                id="fname" name="fname"
+                                                                                                class="form-control"
+                                                                                                required
+                                                                                                [(ngModel)]="eventText"
+                                                                                                #fname="ngModel"> </td>
+
+                                                                                <!-- <td> <input id="fname" name="fname" class="form-control"
+                                required minlength="4"
+                                [(ngModel)]="data.fullname" #fname="ngModel" ></td> -->
+
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                                <td class=a>
+                                                                                        <div
+                                                                                                *ngIf="fname.invalid && (fname.dirty || fname.touched)">
+                                                                                                <!-- class="alert alert-danger"-->
+
+                                                                                                <div
+                                                                                                        *ngIf="fname.errors.required">
+                                                                                                        required.
+                                                                                                </div>
+
+
+                                                                                        </div>
+                                                                                </td>
+
+                                                                        </tr>
+                                                                        <tr>
+                                                                                <td> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                                                        &nbsp;Date : <input type="date"
+                                                                                                id="dat" name="dat"
+                                                                                                class="form-control"
+                                                                                                required
+                                                                                                [(ngModel)]="eventDate"
+                                                                                                #dat="ngModel"></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                                <td class=a>
+                                                                                        <div
+                                                                                                *ngIf="dat.invalid && (dat.dirty || dat.touched)">
+                                                                                                <!-- class="alert alert-danger"-->
+
+                                                                                                <div
+                                                                                                        *ngIf="dat.errors.required">
+                                                                                                        required.
+                                                                                                </div>
+
+
+                                                                                        </div>
+                                                                                </td>
+
+                                                                        </tr>
+
+
+
+
+                                                                </tbody>
+                                                        </table>
+                                                </div>
+                                                <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default"
+                                                                data-dismiss="modal" (click)="addevent(f);f.reset()"
+                                                                [disabled]="f.form.pristine || f.form.invalid">add
+                                                        </button>
+
+                                                        <button type="button" class="btn btn-default"
+                                                                data-dismiss="modal">Close</button>
+                                                </div>
+                                        </div><!-- /.modal-content -->
+                                </form>
+                        </div>
+                </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+</div>

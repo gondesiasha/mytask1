@@ -1,0 +1,247 @@
+<app-first></app-first>
+<div>
+  <!-- <form  [formGroup]=" AddmoreForm">
+        <table>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+            </tr>
+            <tr>
+                <td><input type="text" class="form-control" formControlName=" firstname"></td>
+                <td> <input type="text" class="form-control" formControlName="lastname"></td>
+                <td> <input type="text" class="form-control" formControlName="email">  </td>
+                <td><button type="button" >Addmore</button></td>
+                <td><button type="button">Delete</button></td>
+
+               
+
+            </tr>
+                               
+                    
+                           
+                          
+        </table>
+
+
+    </form> -->
+  <!-- <section>
+
+        
+            <p>Any special requests?</p>
+            <ul formArrayName="specialRequests">
+              <li *ngFor="let item of orderForm.controls.specialRequests.controls; let i = index">
+                <input type="text" formControlName="{{i}}">
+                <button type="button" title="Remove Request" (click)="onRemoveSpecialRequest(i)">Remove</button>
+              </li>
+            </ul>
+            <button type="button" (click)="onAddSpecialRequest()">
+              Add a Request
+            </button>
+          </section> -->
+
+
+  <!-- 
+          <div formArrayName="arr"
+  *ngFor="let a of AddForm.get('arr').controls; let i = index;">
+  <div [formGroupName]="i">
+    <input formControlName="firstname" placeholder=" firstname">
+  
+    <input formControlName="lastname" placeholder=" lastname">
+    <input formControlName="email" placeholder="email">
+    <button type="button" (click)="addItem(i)">add</button>
+    <button type="button" (click)="Delete(i)">Delete</button>
+  </div> 
+</div> -->
+  <!-- 
+<form [formGroup]="AddForm">
+
+<div formArrayName="arr"
+*ngFor="let a of AddForm.controls.arr.controls; let i = index;">
+<div [formGroupName]="i">
+  <input formControlName="firstname" placeholder=" firstname">
+  <!-- <div *ngIf=" AddForm.controls.arr.controls[i].controls["first.dirty">
+    <div *ngIf="AddForm.controls.arr.controls[i].hasError('required', 'firstname')">Required</div>  
+  </div> -->
+
+  <!-- <div *ngIf="AddForm.controls.arr.controls[i].controls['firstname'].invalid && (AddForm.controls.arr.controls[i].controls['firstname'].dirty || AddForm.controls.arr.controls[i].controls['firstname'].touched)">
+  <div *ngIf="AddForm.controls.arr.controls[i].controls['firstname'].errors.required" class="error">
+   required.
+</div></div>
+
+
+  <input formControlName="lastname" placeholder=" lastname">
+  <div *ngIf="AddForm.controls.arr.controls[i].controls['lastname'].invalid && (AddForm.controls.arr.controls[i].controls['lastname'].dirty || AddForm.controls.arr.controls[i].controls['lastname'].touched)">
+    <div *ngIf="AddForm.controls.arr.controls[i].controls['lastname'].errors.required" class="error">
+     required.
+  </div></div>
+
+  <input formControlName="email" placeholder="email">
+  <div *ngIf="AddForm.controls.arr.controls[i].controls['email'].invalid && (AddForm.controls.arr.controls[i].controls['email'].dirty || AddForm.controls.arr.controls[i].controls['email'].touched)">
+    <div *ngIf="AddForm.controls.arr.controls[i].controls['email'].errors.required" class="error">
+     required.
+  </div></div>
+
+  <button type="button" (click)="addItem(i)">add</button>
+  <button type="button" (click)="Delete(i)">Delete</button>
+</div> 
+</div>
+</form> --> -->
+
+
+  <div class="border">
+    <div style="text-align: center">
+      <h1> Employee Details </h1>
+      <br>
+
+    </div>
+
+    <form [formGroup]="AddForm" autocomplete="on" (ngSubmit)="AddForm.valid  " novalidate>
+      <table align="center" class="table table-striped">
+
+
+
+        <tr formArrayName="arr" *ngFor="let a of AddForm.controls.arr.controls; let i = index;">
+          <div [formGroupName]="i">
+            <td>
+              <label>Firstname:</label>
+              <br>
+              <input formControlName="firstname" placeholder=" firstname">
+              <div class=a>
+                <div
+                  *ngIf="AddForm.controls.arr.controls[i].controls['firstname'].invalid && (AddForm.controls.arr.controls[i].controls['firstname'].dirty || AddForm.controls.arr.controls[i].controls['firstname'].touched)">
+                  <div *ngIf="AddForm.controls.arr.controls[i].controls['firstname'].errors.required" class="error">
+                    required.
+                  </div>
+                </div>
+              </div>
+
+
+            </td>
+            <td>
+              <label>Lastname:</label><br>
+              <input formControlName="lastname" placeholder=" lastname">
+              <div class=a>
+                <div
+                  *ngIf="AddForm.controls.arr.controls[i].controls['lastname'].invalid && (AddForm.controls.arr.controls[i].controls['lastname'].dirty || AddForm.controls.arr.controls[i].controls['lastname'].touched)">
+                  <div *ngIf="AddForm.controls.arr.controls[i].controls['lastname'].errors.required" class="error">
+                    required.
+                  </div>
+                </div>
+              </div>
+
+            </td>
+            <td>
+              <label>Email:</label><br>
+              <input formControlName="email" placeholder="email">
+              <div class=a>
+                <div
+                  *ngIf="AddForm.controls.arr.controls[i].controls['email'].invalid && (AddForm.controls.arr.controls[i].controls['email'].dirty || AddForm.controls.arr.controls[i].controls['email'].touched)">
+                  <div *ngIf="AddForm.controls.arr.controls[i].controls['email'].errors.required" class="error">
+                    required.
+                  </div>
+                </div>
+              </div>
+
+
+            </td>
+
+            <td>
+              <label>File</label>
+              <br>
+              <input type="file" (change)="onFileChange($event)" />
+              
+              
+
+
+              <!-- <input type="file" formControlName="file" > -->
+              <!-- <input type='file' (change)="readURL($event);" formControlName="im" />
+        <img id="blah" [src]="imageSrc || 'http://placehold.it/180'" alt="your image" /> -->
+            </td>
+
+
+            <td>
+              <label>Image</label><br>
+
+              <!-- <input type='file' (change)="readURL($event,i);" formControlName="im" /> -->
+
+               <input type="text" (click)="image(i+1)" formControlName="im" placeholder="choose image">
+              <div>
+
+              
+
+
+                <img id="blah" src="{{j}}" width="50px" alt="your image" /> 
+
+              </div>
+            </td>
+
+            <!-- <td>
+          <img *ngFor="let url of urls" [src]="url" class="rounded mb-3" width="180"><br>
+        
+        <input type="file" multiple (change)="detectFiles($event)">
+      </td> -->
+
+
+
+
+
+
+
+
+            <td>
+              <label> ADD </label><br>
+              <button type="button" (click)="addItem(i)">+</button>
+
+            </td>
+
+
+
+            <td>
+              <div *ngIf="AddForm.value.arr.length!=1">
+
+
+
+                <label>Delete</label><br>
+                <button type="button" (click)="Delete(i)">Delete</button>
+
+
+
+              </div>
+            </td>
+
+
+          </div>
+
+
+        </tr>
+      </table>
+      <div style="text-align: center">
+
+
+        <button data-toggle="modal" id="center" href="#myModal" class="btn btn-primary btn-dark"
+          [disabled]="AddForm.pristine ||AddForm.invalid">Submit</button>
+
+      </div>
+    </form>
+  </div>
+
+
+
+ <!-- <div  *ngFor="let urls of images" >
+    <img src={{urls.image}} />
+  </div> 
+  <img src="./assets/images/pic2.jpg">  -->
+
+<!-- <img src={{j}} /> -->
+  
+  
+
+
+
+
+
+
+
+
+  <!-- </div> -->

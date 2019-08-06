@@ -1,0 +1,46 @@
+<app-first></app-first>
+<p>daterangepicker works!</p>
+<div style="text-align:center">
+    <h1>
+      {{ title }}
+    </h1>
+
+    <br>
+    <br>
+   
+  
+  <div class="outerborder">
+  <form [formGroup]="myForm" novalidate>
+    <table  align="center">
+      <tr>
+        <td style="width: 200px">
+            <my-date-range-picker name="mydaterange" [options]="myDateRangePickerOptions"
+            formControlName="myDateRange" ></my-date-range-picker>
+            <button  (click)="submit(myForm.value)">submit</button>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <my-date-picker name="mydate1" [options]="myDatePickerOptions"
+            formControlName="myDate1" [(ngModel)]="range1"></my-date-picker>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <my-date-picker name="mydate2" [options]="myDatePickerOptions"
+            formControlName="myDate2" [(ngModel)]="range2" ></my-date-picker>
+
+        </td>
+      </tr>
+    </table>
+    
+  
+  
+                 
+                    
+  
+  </form>
+  </div>
+</div>

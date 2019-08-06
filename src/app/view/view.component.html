@@ -1,0 +1,67 @@
+<app-first></app-first>
+<div style="text-align: center">
+
+    <br>
+    <br>
+    <h1> Student Details</h1>
+
+   
+
+
+</div>
+<br>
+
+
+
+<table class="table table-dark">
+        <thead>
+          <tr>
+              <th> S no</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col"> Dob</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Mobile </th>
+            <th scope="col">LandLine</th>
+            <th scope="col">College</th>
+            <th scope="col">Address</th>
+            <th scope="col">State</th>
+            <th scope="col">City</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of data2">
+            <th scope="row">1</th>
+            <td>{{i.name }}</td>
+            <td>{{i.lastName }}</td>
+            <td>{{i.email }}</td>
+            <td>{{i.dob}}</td>
+            <td>{{i.gender }}</td>
+            <td>{{i.mobile }}</td>
+            <td>{{i.land }}</td>
+            
+            <td>{{i.college }}</td>
+            
+            <td>{{i.address }}</td>
+            
+            <td>{{i.state}}</td>
+            <td>{{i.city }}</td>
+           
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <div>
+        <ngx-spinner
+        bdColor="rgba(51,51,51,0.8)"
+        size="medium"
+        color="#fff"
+        type="ball-spin"
+        fullscreen="false"
+      >
+        <p style="font-size: 20px; color: red">Loading...</p>
+      </ngx-spinner>
+      </div>

@@ -1,0 +1,90 @@
+<app-first></app-first>
+<p>form works!</p>
+<div style="text-align: center">
+    <h1>Employee Details</h1>
+
+
+        <form name="form" [formGroup]=" EmployeeForm" autocomplete="on"
+         (ngSubmit)="registrationForm.valid  "  novalidate>
+        <table align="center">
+            <tr>
+                <th> ID </th>
+                <th>EmployeeId</th>
+                <th>EmployeeName</th>
+                <th>Department</th>
+                <th>Remarks</th>
+            </tr>
+                <tr *ngFor="let i of data">
+                    <td> {{i.id }} </td>
+                    <td> {{i.employeeid }} </td>
+                    
+                
+                    <td><input type="text" class="form-control" formControlName="employeename"></td>             
+                        
+
+                                    <td><select id="select"  value="-1" name="select" class="form-control" formControlName="department" >
+                                        <option disabled selectedvalue="-1">--select Department--</option>
+                                        <option>Electronics</option>
+                                        <option>Electrical</option>
+                                        <option>IT</option>
+                                        <option>Marketing</option>
+                                      </select> </td>
+                                                           
+
+                       
+                            <td><input type="text" class="form-control" formControlName="remarks"></td>
+                          
+                </tr>
+
+                <tr><td></td>
+                    <td></td>
+                    <td>
+                            <div *ngIf="EmployeeForm.controls['employeename'].invalid
+                            && (EmployeeForm.controls['employeename'].dirty || EmployeeForm.controls['employeename'].touched)"
+                             class="alert alert-danger">
+                               <div *ngIf="EmployeeForm.controls['employeename'].errors.required" class="error">
+                               Name is required.
+                             </div>
+                            </div>
+
+                    </td>
+                    <td >  <div *ngIf="EmployeeForm.controls['department'].invalid
+                        && (EmployeeForm.controls['department'].dirty || EmployeeForm.controls['department'].touched)"
+                         class="alert alert-danger">
+                           <div *ngIf="EmployeeForm.controls['department'].errors.required" class="error">
+                         required.
+                         </div>
+                         
+                       </div>  </td> 
+                       <td>
+                            <div *ngIf="EmployeeForm.controls['remarks'].invalid
+                            && (EmployeeForm.controls['remarks'].dirty || EmployeeForm.controls['remarks'].touched)"
+                             class="alert alert-danger">
+                               <div *ngIf="EmployeeForm.controls['remarks'].errors.required" class="error">
+                                required.
+                             </div>
+                            </div>
+
+                    </td>
+
+                
+
+                </tr>
+
+                
+                
+
+            </table>
+            <button class="bt"   [disabled]="EmployeeForm.pristine ||EmployeeForm.invalid">Submit</button>
+            
+            
+
+</form>
+
+</div>
+
+
+
+
+
+

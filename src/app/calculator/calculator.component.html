@@ -1,0 +1,125 @@
+<app-first></app-first>
+
+
+<!-- <div style="text-align: center">
+    <br>
+<input type="text" name="sname" [value]="display">
+<br>
+<br>
+value: {{str}}<br>
+value1: {{arr}}
+<br>
+<br>
+    <table align="center">      
+        <tr>
+            <td><a  id='s' class="myButton" (click)="numClick(1)">1</a></td>
+            <td><a id='s' class="myButton" (click)="numClick(2)">2</a></td>
+            <td><a  id='s'class="myButton" (click)="numClick(3)">3</a></td>
+            <td><a  id='s' class="myButton" (click)="operatorClick('+')">+</a></td>
+          </tr>
+          <tr>
+              <td><a  id='s'  class="myButton" (click)="numClick(4)">4</a></td>
+              <td><a   id='s' class="myButton" (click)="numClick(5)">5</a></td>
+              <td><a id='s' class="myButton" (click)="numClick(6)">6</a></td>
+              <td><a  id='s' class="myButton" (click)="operatorClick('-')">&nbsp;-</a></td>
+           
+          </tr>
+          <tr>
+              <td><a id='s' class="myButton" (click)="numClick(7)">7</a></td>
+              <td><a  id='s' class="myButton" (click)="numClick(8)">8</a></td>
+              <td><a  id='s' class="myButton" (click)="numClick(9)">9</a></td>
+              <td><a  id='s' class="myButton" (click)="operatorClick('X')">X</a></td>
+           
+          </tr>
+          <tr>
+              <td><a id='s' class="myButton" (click)="clearClick()">C</a></td>
+              <td><a  id='s' class="myButton" (click)="numClick(0)">0</a></td>
+              <td><a  id='s' class="myButton" (click)="resultClick()">=</a></td>
+              <td><a id='s' class="myButton" (click)="operatorClick('/')">&nbsp;/</a></td>
+           
+          </tr>
+    </table> -->
+<!-- </div> -->
+
+<form name="case">
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <div class="base">
+          <div class="maindisplay">
+
+              <input name="display" id="display" value="">
+              
+             <!-- <div class="subdisplay">{{ value="" }}</div> -->
+            
+           </div>
+          <div class="keypad">
+            <div class="keys ackey one-line"(click)="allClear()">AC</div>
+            <div class="keys opkey one-line" (click)="op('/')">/</div>
+            <div class="keys numkey one-line" (click)="pressKey(7)">7</div>  
+            <div class="keys numkey one-line" (click)="pressKey(8)">8</div>
+            <div class="keys numkey one-line" (click)="pressKey(9)">9</div>  
+            <div class="keys opkey one-line" (click)="op('*')">x</div>
+            <div class="keys numkey one-line" (click)="pressKey(4)">4</div>  
+            <div class="keys numkey one-line" (click)="pressKey(5)">5</div>  
+            <div class="keys numkey one-line" (click)="pressKey(6)">6</div>
+            <div class="keys opkey one-line" (click)="op('-')">-</div>  
+            <div class="keys numkey one-line" (click)="pressKey(1)">1</div>
+            <div class="keys numkey one-line" (click)="pressKey(2)">2</div>
+            <div class="keys numkey one-line" (click)="pressKey(3)">3</div>    
+            <div class="keys opkey one-line" (click)="op('+')">+</div>
+            <div class="keys numkey zerokey one-line" (click)="pressKey(0)">0</div>  
+            <div class="keys numkey one-line" (click)="pressKeydot()">.</div>  
+            <div class="keys equalkey one-line" (click)="getAnswer()">=</div>  
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+  </form>
+
+  
+
+
+
+<!-- <html>
+<head>
+    <title>Calculator Project</title>       <link rel="stylesheet" href="calc.css" title="calc.css" type="text/css" media="screen" charset="utf-8">
+        <script src="calc.js" type="text/javascript">
+        </script>
+</head> -->
+
+	
+
+<!-- <form name="case">
+  <input name="display" id="display" value="">
+  <div class="keypad">
+
+    <input type="button" class="digit" value="1" (click)="pressKey1()">
+    <input type="button" class="digit" value="2" (click)="pressKey2()">
+    <input type="button" class="digit" value="3"(click)="pressKey3()">
+    <input type="button" id="plus" 	class="oper" 	value="+"  (click)="add()">
+
+    <input type="button" class="digit" value="4" (click)="pressKey4()">
+    <input type="button" class="digit" value="5" (click)="pressKey5()">
+    <input type="button" class="digit" value="6"(click)="pressKey6()">
+    <input type="button" id="minus" 	class="oper" 	value="-" (click)="sub()" >
+
+    <input type="button" class="digit" value="7" (click)="pressKey7()">
+    <input type="button" class="digit" value="8" (click)="pressKey8()">
+    <input type="button" class="digit" value="9" (click)="pressKey9()">
+    <input type="button" id="divide" 	class="oper" 	value="/" (click)="divide()" >
+    
+    <input type="button" class="digit" value="0" (click)="pressKey0()">
+    <input type="button" id="clearMem" class="oper" value="C" (click)=" allclear()">
+    
+ 
+	<input type="button" id="equal" 	class="oper"	value="=" (click)=getAnswer()>
+    <input type="button" id="multiply" 	class="oper" 	value="*" (click)="mul()">
+    </div>
+    </form> -->
+
+  
+

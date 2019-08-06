@@ -1,0 +1,62 @@
+<app-first></app-first>
+<p>encrypt-decrypt works!</p>
+<!-- <div style="text-align:center">
+        <h1>
+           {{ title }}
+        </h1>
+      
+        <form>
+           Name: <input id="fname" name="fname" class="form-control"
+            required 
+            [(ngModel)]="data.fullname" #fname="ngModel" >
+            <br><br>
+            <button type="button" (click)="encrypt()">Encrypt</button>
+            <p> value :   {{ data1}}</p>
+      
+            Name1:<input id="fname1" name="fname1" class="form-control"
+            required 
+            [(ngModel)]="d.fullname1" #fname1="ngModel" ><br><br>
+            <button type="button" (click)="decrypt()">Decrypt</button>
+            <p> value :   {{ data2}} </p>
+        
+        </form>
+        
+      </div> -->
+      <div class=a>
+      <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="./assets/images/logo.png" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Encrypt</h5>
+              Name: <input id="fname" name="fname" class="form-control"
+              required 
+              [(ngModel)]="data.fullname" #fname="ngModel" >
+              <br>
+
+              <button type="button"  class="btn btn-primary" (click)="encrypt()">Encrypt</button>
+              <p> value :   {{ data1}}</p>
+
+
+
+            
+             
+            </div>
+          </div>
+     
+
+         
+
+          <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="./assets/images/logo.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Decrypt</h5>
+                  Name1:<input id="fname1" name="fname1" class="form-control"
+                  required 
+                  [(ngModel)]="d.fullname1" #fname1="ngModel" >
+                  <br>
+                  <button type="button"  class="btn btn-primary" (click)="decrypt()">Decrypt</button>
+                  <p> value :   {{ data2}} </p>
+                 
+                  
+                </div>
+              </div>
+              </div>
